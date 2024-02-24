@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  h1 Students
+  a(href='/students/new').btn.btn-primary New Student
+  table.table
+    thead
+      tr
+        th Student Number
+        th First Name
+        th Last Name
+        th Email Address
+    tbody
+      each student in students
+        tr
+          td= student.200538019 
+          td= student.Dharmik 
+          td= student.Patel 
+          td= student.dharmik25820@gmail.com
