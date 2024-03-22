@@ -1,0 +1,47 @@
+<!-- views/home.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .jumbotron {
+          margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <%- include('partials/navbar') %>
+        <div class="jumbotron">
+            <% if(singer){ %>
+                <h1><%- singer.name %></h1>
+                <p class="lead">Genre: <%- singer.genre %></p>
+                <p class="">Number of Albums: <%- singer.albums %></p>
+                <p class="">Country: <%- singer.country %></p>
+                <p class="">Active Years: <%- singer.activeYears %></p>
+                <p class="">Awards Won: <%- singer.awardsWon %></p>
+                <p class="">Twitter Handle: <%- singer.twitterHandle %></p>
+                <p class="">Website: <a href="<%- singer.website %>"><%- singer.website %></a></p>
+
+                <p class="">Description: d<%- singer.description %></a></p>
+                <div class="row">
+                    <h3>Albums:</h3>
+                    <ul>
+                        <% singer.albumNames.forEach(function(album) { %>
+                            <li><%- album %></li>
+                        <% }); %>
+                    </ul>
+                </div>
+            <% } %>
+        </div>
+
+        <%- include('partials/footer') %>
+    </div>
+</body>
+</html>
